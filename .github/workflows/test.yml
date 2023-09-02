@@ -26,3 +26,8 @@ jobs:
           OUTPUT1: ${{needs.job1.outputs.output1}}
           OUTPUT2: ${{needs.job1.outputs.output2}}
         run: echo "$OUTPUT1 $OUTPUT2"
+  jobs3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: docker step
+        uses: docker://alpine:3.8
