@@ -11,4 +11,4 @@ RUN pip install rich
 COPY . .
 
 # execute python command to print styled hello world
-CMD ["python", "-c", "from rich import print; print('[bold magenta]Hello, QOD team![/bold magenta]')"]
+CMD ["python", "-c", "from rich import print; print('[bold magenta]Hello, World![/bold magenta]')"]
