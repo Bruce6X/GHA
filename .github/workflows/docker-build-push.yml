@@ -2,10 +2,13 @@ name: docker-build-push
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-
+  # push:
+  #   branches:
+  #     - main
+env:
+  file: ./Dockerfile
+  tags: bruce6x/test:latest
+  
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -25,4 +28,9 @@ jobs:
       with:
         context: .
         push: true
-        tags: bruce6x/test:latest
+        file: ${{ env.file }}
+        tags: ${{ env.tags }}
+
+    - name: Run Docker container
+      run: |
+        docker run --name test-container ${{ env.tags }}
