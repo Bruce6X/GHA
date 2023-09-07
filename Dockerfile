@@ -11,4 +11,4 @@ RUN pip install art
 COPY . .
 
 # execute python command to generate and print ASCII art
-CMD ["python", "-c", "import art; print(art.text2art('Hello Human!'))"]
+CMD ["python", "-c", "import art; print(art.text2art('Hello  Human!'))"]
