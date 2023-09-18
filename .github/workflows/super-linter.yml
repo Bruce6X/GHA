@@ -4,12 +4,13 @@ on:
   workflow_dispatch:
 jobs:
   super-linter:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: super-linter/super-linter/slim@v5
         env:
           VALIDATE_MARKDOWN: true
           VALIDATE_YAML: true
+          VALIDATE_DOCKERFILE_HADOLINT: true
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
