@@ -5,7 +5,7 @@ FROM python:3
 WORKDIR /usr/src/app
 
 # Install the art library for ASCII art generation
-RUN pip install art
+RUN pip install --no-cache-dir art==5.2
 
 # copy all content in current dir to workdir
 COPY . .
